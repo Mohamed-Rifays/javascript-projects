@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      8i excersises
+    </title>
+
+  </head>
+  <body>
+    <p>
+      <button onclick="playGame('heads')">
+        heads
+      </button>
+      <button onclick="playGame('tails')">
+        tails
+      </button>
+    </p>
+    <script>
+      
+      var score=JSON.parse(localStorage.getItem('score')) || {
+        wins:0,looses:0
+      }
+      
+      
+      function playGame(guess){
+        var result='';
+       
+        var variable='you win';
+      var number=Math.random();
+        number<0.5? result='heads':result='tails';
+    guess===result?console.log("You Win!"):console.log('You Loose!');
+    guess===result?score.wins++:score.looses++;
+      console.log(score);
+      localStorage.setItem('score',JSON.stringify(score));
+      }
+      
+    </script>
+  </body>
+</html>

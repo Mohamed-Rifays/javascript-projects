@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      09-amazon-shipping-calculator
+    </title>
+    <style>
+      body{
+        font-family: Arial;
+      }
+      .enter-cost{
+        padding: 10px 10px 10px 10px;
+      }
+      .calculate-button{
+      border: none;
+        padding: 12px 15px 12px 15px ;
+        background-color: green;
+        color:white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Amazon Shipping Calculator
+    </p>
+    <p>
+      Orders under $40 = +$10 Shipping.
+    </p>
+    <p>
+      Orders over $40 = FREE shipping.
+    </p>
+    
+    <input class="enter-cost" type="text" placeholder="Cost of Order"
+    onkeydown="
+    kekypress();
+    ">
+    <button class="calculate-button" onclick="totalcost()"
+    >
+      Calculate
+    </button>
+  
+  <p  class="final-cost"></p>
+    <script>
+      
+       function totalcost(){
+        var inputElement=document.querySelector('.enter-cost');
+        var cost=Number(inputElement.value);
+        if(cost<40){
+          cost=cost+10; 
+       }
+       else{
+        cost=cost;
+        
+       
+      }
+      document.querySelector('.final-cost').innerHTML=`$${cost}`;
+      }
+      
+      function kekypress(){
+        if (event.key=== 'Enter'){
+      totalcost();
+    }
+      }
+    </script>
+  </body>
+</html>

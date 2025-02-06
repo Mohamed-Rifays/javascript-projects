@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ln 06 excersises</title>
+  </head>
+  <body>
+    <script>
+      var hour=16;
+      var name='Mohamed Rifays'
+      if (hour>=6 && hour<=12){
+        console.log(`Good Morning ${name}`)
+      }
+      else if(hour>=13 && hour<=17){
+        console.log(`Good Afternoon ${name}`)
+      }
+      else{
+        console.log(`Good Night ${name}`)
+      }
+      
+     var age=4;
+     var isHoliday=false;
+     if((age<=6 || age>=65) && !isHoliday){
+      console.log('Discount')
+     }
+     else{
+      console.log('No Discount')
+     }
+     var number=Math.random();
+     var result='';
+     var guess='tails';
+     number<0.5? result='heads':result='tails'
+    guess===result?console.log("You Win!"):console.log('You Loose!');
+ </script>
+  </body>
+</html>

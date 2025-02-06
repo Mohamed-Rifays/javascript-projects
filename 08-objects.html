@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>objects</title>
+  </head>
+  <body>
+    <script>
+      /*
+      var object={
+        name:'mohamed rifays',
+        age:20
+      }
+          object.favourite='biriyani';
+          delete object.favourite;
+          console.log(object);
+          console.log(typeof object);
+          
+          var object={
+            message:'good job!',
+            price:45
+          }
+          var {message,price}=object;
+          console.log(message);
+          console.log(price);
+        
+         var item={
+          product:'basketball',price:2095
+         }
+         console.log(item);
+         console.log(item.product);
+         console.log(item.price+500);
+           */
+          function comparePrice(product1,product2){
+            if (product1.price<product2.price){
+              return product1
+            }
+            else{
+              return product2
+            }
+          }
+          var product1={
+            name:'basketball',
+            price:45
+          }
+          var product2={
+            name:'basketball',
+            price:45
+          }
+          
+          console.log(product1===product2?'truthy':'falsy')
+          console.log(comparePrice(product1,product2));
+          let message='Good Morning';
+          console.log(message.toLowerCase());
+          console.log(message.repeat(2));
+    </script>
+  </body>
+
+</html>

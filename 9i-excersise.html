@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      9i-excersise
+    </title>
+  </head>
+  <body>
+    <button onclick="showingQuantity();" class="current-quantity">
+      Show Quantity
+    </button>
+    <button onclick="adding();" class="adding-to-cart">
+      Add to Cart
+    </button>
+    <button onclick="addingPlusTwo();" class="add-2">
+      +2
+    </button>
+    <button onclick="addingPlusThree();" class="add-3">
+      +3
+    </button>
+    <button onclick="addingPlusFour();" class="add-4">
+      +4
+    </button>
+    <button onclick="addingPlusFive();" class="add-5">
+      +5
+    </button>
+    <button onclick="removeFromCart();" class="remove-1-from-cart">
+      Remove from cart
+    </button>
+    <button onclick="removeMinusTwo();" class="sub-2">
+      -2
+    </button>
+    <button onclick="removeMinusThree();" class="sub-3">
+      -3
+    </button>
+    <p class="Final-quantity"></p>
+    <script>
+      var quantityInCart=0;
+      function showingQuantity(){
+        document.querySelector('.Final-quantity').innerHTML=`Cart quantity: ${quantityInCart}`;
+      }
+      function adding(){
+        document.querySelector('.Final-quantity').innerHTML=`Cart quantity: ${quantityInCart+=1}`;
+      }
+      function addingPlusTwo(){
+        document.querySelector('.Final-quantity').innerHTML=`Cart quantity: ${quantityInCart+=2}`;
+      }
+      function addingPlusThree(){
+        document.querySelector('.Final-quantity').innerHTML=`Cart quantity: ${quantityInCart+=3}`;
+      }
+      function addingPlusFour(){
+        document.querySelector('.Final-quantity').innerHTML=`Cart quantity: ${quantityInCart+=4}`;
+      }
+      function addingPlusFive(){
+        document.querySelector('.Final-quantity').innerHTML=`Cart quantity: ${quantityInCart+=5}`;
+      }
+      function removeFromCart(){
+        document.querySelector('.Final-quantity').innerHTML=`Cart quantity: ${quantityInCart-=1}`;
+      }
+      function removeMinusTwo(){
+        document.querySelector('.Final-quantity').innerHTML=`Cart quantity: ${quantityInCart-=2}`;
+      }
+      function removeMinusThree(){
+        document.querySelector('.Final-quantity').innerHTML=`Cart quantity: ${quantityInCart-=3}`;
+      }
+    </script>
+  </body>
+</html>

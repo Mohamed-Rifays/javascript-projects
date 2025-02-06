@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      ln 07 excersises
+    </title>
+  </head>
+  <body>
+    
+  </body>
+  <script>
+    
+    function greet(name){
+      console.log(`hello ${name}`)
+      if (!name){
+       name='hi there';
+       console.log(name);
+      }
+    }
+    greet();
+    
+function convertToFarenheit(celsius){
+ var result=(celsius*9/5)+32;
+  console.log(result);
+}
+convertToFarenheit(25);
+function convertToCelsius(farenheit){
+  result=(farenheit-32)*5/9;
+  console.log(result);
+}
+convertToCelsius(86);
+
+function convertTemperature(degree,unit){
+ 
+    
+ var result=(degree*9/5)+32;
+  console.log(result+'F');
+}
+convertTemperature(25,'c');
+
+
+function convertLength(length,from,to){
+  var unit='';
+  if(from==='miles'){
+    unit='km';
+    var result=(length*1.6);
+  console.log(result+unit);
+  }
+  
+  else if(from==='km'){
+    unit='miles'
+    var result=(length/1.6);
+  console.log(result+unit);
+  }
+  else if(from==='kmm' && to==='km'){
+    unit='km';
+    var result=(length*1);
+  console.log(result+unit);
+  }
+  
+}
+convertLength(50,'kmm','km');
+
+  
+
+  </script>
+</html>

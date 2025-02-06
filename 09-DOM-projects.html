@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      08 Document Object Model projects
+    </title>
+    <style>
+      .Subscribe-button{
+        height: 35px;
+        width: 85px;
+        font: bold;
+        border-radius: 30px;
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <body>
+      <p>
+        YouTube Subscribe Button
+      </p>
+      <button class="Subscribe-button" onclick="
+           subscribe();
+      ">
+       Subscribe
+      </button>
+      <script>
+        function subscribe(){
+          
+          var buttonElement = document.querySelector('.Subscribe-button');
+      
+      if(buttonElement.innerText==='Subscribe'){
+       buttonElement.innerText='Subscribed';
+      }
+      else{
+       buttonElement.innerText='Subscribe';
+      }
+      
+        }
+      </script>
+    </body>
+  </head>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      09 excersises
+    </title>
+  </head>
+  <body>
+  
+    <button class="face-head"
+    onclick="choiceHead()">
+      Heads
+    </button>
+    <button class="face-tail"
+    onclick="choiceTail()">
+      Tails
+    </button>
+    <p class="result"></p>
+    <hr>
+    <input class="input-name" type="text" placeholder="Name" onkeydown="submit();">
+    <button onclick="getName();">Submit</button>
+    <p class="your-name"></p>
+    <hr>
+    <input onkeyup="onup();" class="onkey" type="text" placeholder="enter">
+    <p class="type-letter"></p>
+    <script>
+      
+      function choiceHead(){
+       document.querySelector('.result').innerHTML='You chose.Heads'
+    
+      
+      }
+      function choiceTail(){
+        document.querySelector('.result').innerHTML='You chose.Tails'
+      }
+     function getName(){
+      var inputName=document.querySelector('.input-name').value;
+      document.querySelector('.your-name').innerHTML=`Your name is: ${inputName}`
+     }
+     function submit(){
+      if(event.key==='Enter'){
+        getName();
+      }
+     }
+     function onup(){
+       var element = document.querySelector('.onkey').value
+       document.querySelector('.type-letter').innerHTML=element;
+     }
+    </script>
+  </body>
+</html>
