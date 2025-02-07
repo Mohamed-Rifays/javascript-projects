@@ -1,0 +1,69 @@
+body{
+  background-color: black;
+}
+.button-number{
+  font-family: Arial;
+  font-size: 26px;
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(57, 52, 52);
+  color: white;
+}
+.button-clear{
+  font-family: Arial;
+  font-size: 17px;
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(57, 52, 52);
+  color: white;
+
+}
+.button-number-right{
+  font-family: Arial;
+  font-size: 26px;
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  margin-left: 5px;
+}
+.button-number-middle{
+  font-family: Arial;
+  font-size: 26px;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.button-calculating{
+  font-family: Arial;
+  font-size: 26px;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(254, 160, 10);
+  color: white;
+  margin-left: 4px;
+  cursor: pointer;
+}
+.calculating{
+  font-family: Arial;
+  font-size: 45px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: white;
+}
