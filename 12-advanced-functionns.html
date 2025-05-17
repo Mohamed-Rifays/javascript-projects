@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+    <!---<button class="startbutton" onclick="change-();">Start</button>--->
+   <!--<button class="addtocart" onclick="addvalue();">Add To Cart</button>
+    <div class="addingvalue">
+
+    </div>-->
+
+    <!--<button onclick="messages++">Add</button>
+    <button onclick="messages--">Remove</button>-->
+    
+    <button  class="clickbutton">Click</button>
+    
+    <script>
+      /*
+      const buttonelement=document.querySelector('.clickbutton');
+       
+      const clicklistener=()=>{
+        console.log(6);
+      }
+      buttonelement.addEventListener('click',clicklistener)
+
+      buttonelement.addEventListener('click',()=>{
+        console.log(5);
+      })
+      
+     buttonelement.removeEventListener('click',clicklistener)
+     */
+
+     /*
+     setTimeout(function()  {
+      console.log("hello");
+    }, 3000);
+
+    console.log("hi")
+
+    setInterval(function(){
+      console.log("welcome");
+    },2000);
+*/
+/*
+   var add=function(){
+    console.log(2+3);
+   }
+   add();
+   add();
+
+  function runTwice(fun){
+    fun();
+    fun();
+  }
+  runTwice(function(){
+    console.log('12b');
+  })
+  runTwice(add);
+   
+  function change(){
+    var getInput=document.querySelector('.startbutton')
+    getInput.innerHTML='Loading';
+     setTimeout(function(){
+     
+        getInput.innerHTML='Finished!';
+     
+    },1000)
+    
+  }
+*/
+
+/*
+let timeoutId;
+function addvalue(){
+document.querySelector('.addingvalue').innerHTML=`<p>${'Added'}</p>`
+
+clearTimeout(timeoutId);
+
+timeoutId=setTimeout(function(){
+  document.querySelector('.addingvalue').innerHTML=''
+},2000)
+
+
+}
+*/
+
+/*
+let messages=2;
+setInterval(function(){
+  if(messages===0){
+    document.title='App';
+  }
+  else{
+    if(document.title==='App'){
+    document.title=`${messages}Messages`
+   
+  }
+  else{
+    document.title='App'
+  }
+}
+  }
+  ,1000)
+  
+  
+  */
+ /*
+  const arrowfunction=(param,param2)=>{
+    console.log(param+param2+1)
+  }
+  arrowfunction(5,6);
+
+  const result=()=>3+2;
+  console.log(result());
+*/
+
+/*
+   const ob={
+    method:(param)=>{
+     console.log(param)
+    }
+   }
+ ob.method(5)
+
+ const hi={
+  method(param1){
+    console.log(param1)
+  }
+ }
+ hi.method(5)
+*/
+/*
+console.log(array=[1,2,-3,-5,8,0].filter((value,index)=>{
+  
+  if(value>0){
+    return true;
+  }
+  else{
+    return false;
+  }
+   
+   return value>0;
+}));   
+  let value2;
+   console.log([1,2,3].map((value,index)=>{
+    return value2=value*3;
+   }))
+     */
+/*shortcut af arrow function*/
+/*
+   console.log([1,2,3].map(value=>value*2));
+
+*/
+/*
+const multiply=(a,b)=>{
+ return a*b;
+
+}
+console.log(multiply(2,3));
+console.log(multiply(7,10));
+
+
+const mul= (a,b)=> a*b;
+console.log(mul(2,3));  
+console.log(mul(7,10));
+*/
+
+/*
+function countPositive(nums){
+  let count=0;
+   nums.forEach((value,index)=>{
+  if(value>0){
+    count++;
+  }
+  
+   })
+
+   return count;
+}
+console.log(countPositive([1,-3,5]));
+console.log(countPositive([-2,3,-5,7,10]));
+*/
+
+function addNum(array,num){
+
+  /*
+  return  array.map((value1,index)=>{
+    return value1+num;
+  })
+*/
+  
+return array.map(value1=>value1+num);
+}
+console.log(addNum([1,2,3],2));
+
+function removeEgg(foods){
+  let eggsRemoved=0;
+  return foods.filter((value,index)=>{
+    if(value==='egg' && eggsRemoved<2){
+      eggsRemoved++
+      return false;
+    }
+    else{
+      return true;
+    }
+  })
+}
+console.log(removeEgg(['egg','apple','egg','egg','ham']))
+
+
+
+    </script>
+  </body>
+</html>

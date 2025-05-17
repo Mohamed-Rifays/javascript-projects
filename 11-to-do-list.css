@@ -1,0 +1,32 @@
+.addTodo{
+  padding: 10px;
+  border-radius: 2px;
+  border:2px solid rgb(183, 181, 181);
+
+}
+.date{
+  padding: 9px 10px 9px 10px;
+  border:2px solid rgb(183, 181, 181);
+}
+.addbutton{
+  padding: 11px 40px 10px 40px;
+  background-color: green;
+  color: white;
+  border: 1px solid grey;
+}
+.main-grid,
+.content-grid{
+  display: grid;
+  grid-template-columns: 180px 130px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  align-items: center;
+
+}
+.deletebutton{
+  background-color: rgb(151, 10, 10);
+  color:white;
+  padding: 8px 0px 8px 0px;
+}
