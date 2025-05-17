@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NameFilter</title>
+</head>
+<body>
+  <input class="name-input" type="text" placeholder="enter name" oninput="displayName()">
+  <div class="display-name"></div>
+
+  <script>
+    function displayName(){
+     const array = [
+  'Aarav', 'Meera', 'Karthik', 'Ananya', 'Rohan',
+  'Priya', 'Vikram', 'Sanya', 'Arjun', 'Isha',
+  'Rahul', 'Neha', 'Siddharth', 'Pooja', 'Aditya',
+  'Divya', 'Manish', 'Sneha', 'Ravi', 'Kavya'
+];
+
+  
+      
+      var letter=document.querySelector('.name-input');
+      var getLetter=letter.value.toLowerCase();
+
+     if(getLetter===''){
+        document.querySelector('.display-name').innerHTML='';
+        return;
+      }
+      
+
+     var answer=array.filter(array=>array.toLowerCase().includes(getLetter))
+
+     if(answer.length===0){
+      document.querySelector('.display-name').innerHTML=`<li>Sorry,no person in that  name</li>`;
+     }
+     else{
+          document.querySelector('.display-name').innerHTML=answer.map(name=>`<li>${name}</li>`).join(" ");
+     }
+   
+   
+      
+      
+  
+    }
+    
+  </script>
+</body>
+</html>
