@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    .text-box{
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: rgb(246, 245, 245);
+    }
+    .cart-button{
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: yellow;
+    }
+    .content{
+      display: grid;
+      max-width: 500px;
+      grid-template-columns: 1fr 1fr 1fr;
+   
+      margin-top: 20px;
+      gap: 15px;
+    }
+    .cost-input{
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: rgb(246, 245, 245);
+    }
+    .display-total{
+      margin-top: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+    }
+    .main-content , .content{
+      display: grid;
+      grid-template-columns: 190px 190px 130px;
+      gap: 10px;
+      align-items: center;
+      
+      
+      
+    }
+    .content{
+      padding-left: 18px;
+      padding-bottom: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+  
+     
+    }
+    
+    .content div{
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      padding: 10px;
+    }
+    .cart-heading{
+      display: grid;
+      grid-template-columns: 190px 190px 130px;
+      gap: 10px;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-left: 10px;
+      
+
+    }
+    .removeItem{
+      border: none;
+      border-radius: 3px;
+      background-color: rgb(173, 11, 11);
+      color: white;
+      padding: 10px 0px 10px 0px;
+      cursor: pointer;
+    
+     
+    }
+    .cart-heading p{
+      font-size: 25px;
+      border-left:1px solid #ccc;
+      padding-left: 5px;
+     
+    
+    }
+    .cart-heading p:first-child{
+
+      border-left: none;
+    }
+    .cart-content{
+      border: 1px solid grey;
+      border-radius: 3px;
+      margin-top: 20px;
+      width: 550px;
+      border-left:1px solid #ccc;
+    }
+    .content .removeItem{
+    border-bottom: 1px solid #ccc;
+    
+    }
+    h1{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>SHOPPING CART</h1>
+  <div class="main-content">
+  <input class="text-box input-value" type="text" placeholder="Enter product">
+  <input class="cost-input get-cost-input" type="number" placeholder="Enter Cost" onkeydown="eventEnter(event)">
+  <button onclick="addtocart();" class="cart-button">Add To Cart</button>
+</div>
+<div class="cart-content">
+<div class="cart-heading">
+  <p>PRODUCT</p>
+  <p>COST</p>
+  <p>REMOVE</p>
+  
+</div>
+  <div class="display-items content">
+
+  </div>
+</div>
+
+  <div class="display-total"></div>
+
+  <script>
+   
+    var arr= JSON.parse(localStorage.getItem('arr'));
+
+    addingItems();
+    
+    function addingItems(){
+
+      
+      var todoitem="";
+      var totalCost=0;
+
+      arr.forEach((todovalue,index)=>{
+        const {productName,productCost}=todovalue;
+           const html=`<div>${productName}</div>
+           <div>$${productCost}</div>
+           <button class="removeItem" 
+            
+            ">Remove From Cart</button>`
+           todoitem+=html;
+           totalCost+=Number(productCost);
+      })
+            
+            document.querySelector(".display-items").innerHTML=todoitem;
+            
+            document.querySelector(".display-total").innerHTML=`Total Cost : $${totalCost}`;
+
+            if (totalCost>=100000){
+              alert("YOU HAVE REACHED YOUR PURCHASE LIMIT FOR THIS MONTH \n TOU CAN COME AGAIN LATER \n THANK YOU !:)")
+            }
+
+            
+        document.querySelectorAll('.removeItem').forEach((value,i)=>{
+           value.addEventListener('click',()=>{
+              arr.splice(i,1);
+              addingItems();
+
+            });
+        });
+    }
+    
+    function addtocart(){
+      var getValue=document.querySelector(".input-value");
+      var gettingValue=getValue.value;
+      var costValue=document.querySelector(".get-cost-input");
+      var gettingCostValue=costValue.value;
+      if (gettingValue==='' || gettingCostValue===''){
+        alert("PLEASE ENTER THE PRODUCT TO ADD");
+      }
+      else{
+        arr.push({productName:gettingValue,productCost:gettingCostValue});
+      getValue.value=''
+      costValue.value='';
+      addingItems();
+    
+      localStorage.setItem('arr',JSON.stringify(arr));
+      
+      }
+      
+    }
+
+    function eventEnter(event){
+      if(event.key==="Enter"){
+        addingItems();
+      }
+    }
+  </script>
+</body>
+</html>
